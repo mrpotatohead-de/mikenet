@@ -1,0 +1,115 @@
+.TH Group 4 "" "" Mikenet
+.SH NAME
+Group
+.SH SYNOPSIS
+
+#include <mikenet/simulator.h>
+
+file defined in net.h
+
+typedef struct tagGroup
+{
+  char *name;
+  int numUnits;
+  int index;         /* group specifier */
+  char **unitNames;
+  Real ** inputs;    /* indexed by time and unit */
+  Real ** outputs;   /* indexed by time and unit */
+  Real ** goalOutputs;   /* indexed by time and unit, used in crbp only */
+  int activationType;  /* LOGISTIC_ACTIVATION or TANH_ACTIVATION */
+  int bias;  /* is it a bias */
+  Real biasValue;
+  int numIncoming,numOutgoing;
+  int scaling;  /* do we scale error (SCALE_NONE or SCALE_PROB) */
+  Real *z,*backz; /* used by crbp */
+  Real *taos;  /* time constants */
+  Real **dedx;  /* indexed over time and units */
+  Real **dydt;  /* indexed over time and units */
+  Real *dedtao; 
+  Real taoEpsilon; /* learning rate for time constants */
+  Real temperature;
+  Real targetNoise;  /* sd for gaussian noise added to target */
+  Real clampNoise;  /* sd for gaussian noise added to input clamp */
+  Real activationNoise; /* sd for gaussian noise on output */
+  int resetActivation;  /* reset outputs to 0 at t=0? */
+  Real errorRadius;
+  int errorComputation;  /* SUM_SQUARED_ERROR or CROSS_ENTROPY_ERROR */
+  Real **goalInputs;  /* indexed by time, unit */
+} Group;
+
+.SH DEFINITION
+A group is a collection of arrays which represent the states of units
+in a network, and the properties of those units.  A group is a set of units
+which have the same connectivity pattern.
+.SS Members
+.P
+.C name
+The name of the group
+.P
+.C numUnits
+The number of units in the group
+.P
+.C index
+An internal index to identify the group.  The n'th group you define has an
+index of n-1 (zero based).
+.P
+.C unitNames
+An array of (initially null) pointers to charater names.  Use the name_units
+command to assign them from a file.
+.P
+.C inputs
+A 2d array, indexed by time and by unit number, of the input or activation
+to a unit in the group
+.P
+.C outputs
+A 2d array, indexed by time and by unit number, of the output 
+of a unit in the group
+.P
+.C activationType
+A flag for the activation type, initally set to the value of
+the variable default_activationType.  Use the constants
+ACTIVATION_LOGISTIC or ACTIVATION_TANH for the two kinds
+of activation functions.
+.P
+.C bias
+A boolean field; 1 if the group is a bias group.
+.P
+.C biasValue
+What the bias output is.  default 1.0
+.P
+.C numIncoming, numOutgoing
+These are set by the system for internal use.  Do not
+change these values!
+.P
+.C scaling
+How error on units in this group is scaled (i.e. use
+SCALE_NONE to disable scaling, or SCALE_PROB to multiply
+error by the example probability)
+.P
+.C temperature
+The gain of the activation function for units in this
+group.  Default 1.0.  This value is multiplied by the input
+to a unit before squashing.
+.P
+.C targetNoise
+The standard deviation of gaussian noise added to the error
+for each unit that has error. Default 0.0.
+.P
+.C clampNoise
+The standard deviation of gaussian noise added
+to the clamp value for each unit whose value is clamped.
+.P
+.C resetActivation
+A boolean flag set to 1 if the outputs of units are zeroed
+out at the beginning of each example presentation.  Default
+1.
+.P
+.C errorRadius
+The radius of zero error for units with targets.  Default 0.0
+.P
+.C errorComputation
+Set to SUM_SQUARED_ERROR or CROSS_ENTROPY_ERROR, to set
+the method of calculating error that is propagated backward.
+
+
+

@@ -1,0 +1,4 @@
+#!/bin/csh
+
+time ~/mpich/bin/mpirun -np 4 train 
+

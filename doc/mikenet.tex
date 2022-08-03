@@ -1,0 +1,129 @@
+\documentclass[jou]{apa}
+\usepackage{mikenet}
+
+\sloppy
+
+\title{\mikenet:\\ 
+A Flexible, Fast, Portable\\
+Neural Network Simulator}
+
+\author{Michael W. Harm}
+\affiliation{University of Southern California\\
+Computer Science Department\\
+mharm@gizmo.usc.edu}
+
+\abstract{\mikenet \, is a simulation {\em library}, a set of ``C''
+routines for building flexible neural network simulations.  Lacking
+any graphical user interfaces, and written entirely in Ansi C, the
+simulator is portable to just about any platform.  It has many featurs
+not found in conventional simulators, such as the ability to
+independently define and train multiple-component networks with shared
+structures, to vary input and output group assignment and to switch
+training regimes on the fly.  Since each simulation is a ``C''
+program, the halting criterion, evaluation metric, frequency by which
+weights are saved and the method by which examples are sampled are all
+totally user specifiable.  \mikenet \, currently implements backprop
+through time \cite{williams.peng90}, normal feedforward backprop as a
+subset of this functionality \cite{rumelhart.hinton.ea86},
+continuous-time backprop with trainable time constants
+\cite{pearlmutter89}.  Choices in data structures reflect a bias for
+large scale (100+ hidden unit) networks; as such the simulator's
+performance compares quite favorably to most other public domain
+connectionist simulators.  \mikenet \, is designed as a tool for
+serious research in neural networks; it is not for the casual hobbyist
+or experimenter.  Online help and graphical interfaces are
+nonexistent, and the system and documentation assumes not only a
+knowledge of neural network principles, but a good degree of computer
+literacy, specifically the ability to program in ``C''.  }
+
+\begin{document}
+
+\maketitle
+
+\section{System Architecture}
+
+Overall, the simulator package consists of a set of objects
+(ordinary C structs) and routines that operate on them.  One
+creates a network to train by instantiating a Net object,
+instantiating a number of Group objects for groups of units,
+a number of Connection objects which connect groups to each
+other, and an ExampleSet object for training the network(s).
+These items are bound to one another, but are functionally 
+independent: a given Group can belong to several Net objects,
+likewise a Connection object.  ExampleSet objects can also be
+shared among many Net objects.  
+
+\subsection{The Network}
+
+A Net object essentially is a holder for a set of Groups and
+Connections.  It does not contain very much information by itself;
+things like learning rates are properties of the Connection objects,
+while input and output histories are properties of the Group objects.
+A Net object is shorthand for an entity which is to be trained; when a
+forward or backward propagation routine is called, it typically is
+invoked with a Net object and and Example object.  All groups defined
+as belonging to the Net object are updated, according to the weights
+in all Connection objects belonging to the Net object.  One can have
+multiple Net objects, with independent or shared Group and Connection
+objects. For example, the reading model of \cite{harm.seidenberg96}
+utilized one 'phonological' Net object to define a phonological
+attractor space, and another Net object for a reading model which
+included all groups and connections in the 'phonological' net, plus
+components specific to the reading system.  This model was trained
+using {\em interleaving} of trials; some trials trained just the
+phonological net while others trained the larger reading net.
+
+
+
+\subsection{Groups}
+\subsection{Connection Sets}
+\subsection{Example Sets}
+
+
+\section{Overall Design Goals}
+
+Wherever possible, the original mathematics behind the simulation
+training regimes have been used as a model for \mikenet.
+For example, the backprop equations in \cite{williams.peng90} for
+BPTT do not distinguish ``input'' from ``output'' units, only
+which units have a clamp at a given time, and which units
+have a target at a given time.  Most simulators remove this inherent
+flexibility, and require the specification of ``input'' and 
+``output'' groups.  Training settling networks or bi-directional
+systems then becomes very difficult; a difficulty which derives
+from the limitations of simulator, not the mathematics of BPTT.
+\mikenet \, attempts to avoid such limitations wherever possible.
+
+A second limitation which plagues many public domain simulators is
+{\em scalability}.  The Tlearn simulator, for example, represents the
+weights of an $n$ unit network as an $n^2$ array.  While this is fine
+for small networks, it becomes very inefficient for larger networks
+which are not fully connected.  A \mbox{10x10x10} encoder network, for
+example, needs 200 weights, but Tlearn creates 900.  It was a goal for
+the design of \mikenet \, that the simulator scale reasonably as it is
+used for larger and larger problems.
+
+A further problem in many public domain simulators is a lack of
+portability.  Many are quite large, and difficult or impossible to
+port to new platforms.  Some require the Xwindows graphical
+environment, or unix specific tools such as ``awk'' or ``yacc'' to
+compile.  Many are written in C++, which makes them even less portable
+and in particular makes the port to parallel programming environments
+much more difficult.  \mikenet \, was written in ANSI C with no
+user interface and no explicit dependencies on any OS specific
+feature.  It was developed on a Linux system and has been ported
+to Sun, Hewlett-Packard, DEC, Convex and SGI workstations, and
+Apple Power Macintoshes. A Windows port has not been attempted but
+should be easy.
+
+The purpose of this section was not to disparage other simulators,
+many of which are quite good, but to provide the motivation for the
+design choices for the \mikenet \, simulator.
+
+
+\bibliographystyle{apa}
+\bibliography{mikes.library}
+\end{document}
+
+
+

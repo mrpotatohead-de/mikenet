@@ -1,0 +1,8 @@
+To build the simulator, cd into the "src" directory and
+follow the instructions in the INSTALL file there.
+
+To build the demos, cd into the demos directory.  There
+will be a subdirectory for each demo.  Once the simulator
+has been built, you should be able to build each of the demos
+by simply typing 'make' in each demo's subdirectory.
+

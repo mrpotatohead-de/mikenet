@@ -1,0 +1,11 @@
+Convex Exemplar (PA-8000): 117 seconds
+200mhz Pentium Pro, Linux: 220 cpu seconds
+Sun Sparc Enterprise Server: 319 cpu seconds
+IBM SP2 (66mhz thin node): 357 cpu seconds
+HP 735/125: 385.2 cpu seconds
+SGI PowerChallenge: 414 seconds
+Convex Exemplar (PA-7200): 444 seconds
+100mhz Pentium, Linux:  869 cpu seconds
+SGI Not-so-powerSomething: 1160 seconds
+Sun Sparc IPX: 2673 seconds
+400mhz pentium II: 137 seconds

@@ -1,0 +1,47 @@
+.TH Connections 4 "" "" Mikenet
+.SH NAME
+Connections
+.SH SYNOPSIS
+
+#include <mikenet/simulator.h>
+
+structure defined in net.h
+
+typedef struct _tagConnections
+{
+  Real epsilon;       /* learning rate */
+  Group * from, *to;  /* groups from and to */
+  int ** frozen;   /* indexed by toUnit and fromUnit */
+  Real ** weights;  /* ditto */
+  Real ** backupWeights;  /* normally null, unless storeWeights called */
+  Real **backDot;
+  Real weightNoise;
+  Real ** gradients; /* ditto */  
+  Real **h,**g;      /* used for conjugate gradients */
+  Real ** hardLr; 
+  Real ** dbdWeight;
+  int noisyUpdate;   /* boolean flag */
+} Connections;  
+
+.SH DEFINITION
+A connection set is an object that is instantiated when two groups (see Group(4)) are connected.  It is a symbolic representation of the connections between the units of the two groups, consisting of 2d arrays for the weight matrices, error gradients, and various constants, such as the learning rate (epsilon).  Structure is returned by a call to connect_groups (see connect_groups(2)).
+.SS Members
+.P
+.C epsilon
+Learning rate for the connections.  Default value is whatever the value of default_epsilon is when connect_groups is called.
+.P
+.C from
+A pointer to the group object which the projections are coming from.
+.P
+.C to
+The group which the connections are pointing to.
+.P
+.C frozen
+A 2d integer array for which links are frozen; values of 0 mean not frozen, and nonzero means frozen.  
+.P
+.C weights
+2D array of Real values.  First index is the "to" unit and 2nd index is the "from" unit.
+.P
+.C gradients
+2D array; stored gradients from bptt.
+.P

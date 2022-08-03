@@ -1,0 +1,23 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\BCAY{Pearlmutter}{Pearlmutter}{1989}]{pearlmutter89}
+Pearlmutter, B.~A. \BBOP1989\BBCP.
+\newblock \BBOQ Learning state space trajectories in recurrent neural
+  networks\BBCQ\
+\newblock {\Bem Neural Computation}, {\Bem 1\/}(2), 263--269.
+
+\bibitem[\protect\BCAY{Rumelhart, Hinton, \BBA\ Williams}{Rumelhart
+  et~al.}{1986}]{rumelhart.hinton.ea86}
+Rumelhart, D., Hinton, G., \BBA\ Williams, R. \BBOP1986\BBCP.
+\newblock \BBOQ Learning internal representations by error propagation\BBCQ\
+\newblock In D.~Rumelhart \BBA\ J.~McClelland \BEDS, {\Bem Parallel distributed
+  processing, vol. 1.} Cambridge, MA: MIT Press.
+
+\bibitem[\protect\BCAY{Williams \BBA\ Peng}{Williams \BBA\
+  Peng}{1990}]{williams.peng90}
+Williams, R.~J.\BBACOMMA\  \BBA\ Peng, J. \BBOP1990\BBCP.
+\newblock \BBOQ An efficient gradient-based algorithm for on-line training of
+  recurrent network trajectories.\BBCQ\
+\newblock {\Bem Neural Computation}, {\Bem 2}, 490--501.
+
+\end{thebibliography}

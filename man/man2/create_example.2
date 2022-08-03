@@ -1,0 +1,20 @@
+.TH create_example 2 "" "" Mikenet
+.SH NAME
+create_example
+.SH SYNOPSIS
+
+#include <mikenet/simulator.h>
+
+function prototype in example.h
+
+Example * create_example(TIME);
+
+.SH DEFINITION
+Creates an empty example with the given max number of time ticks.  Can have any example copied into it (see copy_example(2)).  
+
+See Example(4) for more about the internals of examples.
+
+This function should be called after all groups are created.  It creates internal structures based on the number of globally defined groups.
+
+.SH SEE ALSO
+copy_example(2), Example(4)

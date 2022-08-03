@@ -1,0 +1,69 @@
+.TH MIKENET_STATS 1 "" "" "Mikenet" ""
+.SH NAME
+get_stat_struct(), push_item(), clear_stats(), free_stats(),
+mean(), se(), sd(), pearson(), median(), sort_stats()
+.SH SYNOPSIS
+#include <mikenet/simulator.h>
+.P
+StatStruct * get_stat_struct();
+.P
+void push_item(float x,StatStruct *s);
+.P
+void clear_stats(StatStruct *s);
+.P
+void free_stats(StatStruct *s);
+.P
+float mean(StatStruct *s);
+.P
+float se(StatStruct *s);
+.P
+float sd(StatStruct *s);
+.P
+float median(StatStruct *x);
+.P
+float pearson(StatStruct *x, StatStruct *y);
+.P
+void sort_stats(StatStruct *x);
+.SH OVERVIEW
+Mikenet comes with a small set of statistical functions, that
+can perform tasks such as computing the mean, standard deviation,
+and standard error for a set of numbers, as well as the Pearson
+r value for two sequences of numbers. 
+.P
+First, you have to instantiate a StatStruct structure.  It is used to
+hold a stream of numbers.  Use the get_stat_struct function to 
+return a pointer to a new StatStruct.  
+.P
+Armed with this structure, you begin inserting numbers into the structure
+using the push_item routine.  The push_item routine handles array resizing
+and keeps track of things like the sum and sum of squares of the
+stream of numbers.
+.SH DESCRIPTION
+.P
+.C mean
+Returns the mean of the stream of numbers
+.P
+.C sd
+Returns the standard deviation
+.P
+.C se
+Returns the standard error
+.P
+.C pearson
+Returns the pearson r value for the two StatStructs given as arguments
+.P
+.C median
+Returns the median value of the distribution.  Note that it sorts the 
+values of the data array
+.P
+.C sort_stats
+Sorts the stats structure's data into ascending order.  sort_stats_descending sorts into descending order.  Uses the c 'qsort' routine.
+.C clear_stats
+Zeros all counters for the given StatStruct.  Allows StatStruct to be reused.
+.P
+.C free_stats
+Frees memory held by the StatStruct, including the StatStruct itself.
+
+
+
+

@@ -1,0 +1,57 @@
+This is a benchmark for the new BLAS/ATLAS extensions to MikeNet.
+
+Invoke the binaries with the "time" command and note the time it takes
+to run, as in:
+
+   time ./ps_vanilla
+
+The Makefile will produce several binaries all from the same
+source. Here's what they are:
+
+ps_vanilla: A "vanilla" MikeNet, with no special blas extensions.
+
+ps_atlas_sse: Using Atlas, compiled with the intel SSE extensions.
+
+ps_atlas_PIII: Using Atlas tuned for a Pent III, *without* SSE extensions.
+
+ps_atlas_native: Using a native blas implementation of 3dnow
+                 extensions (if there is one.. Debian sometimes supplies
+                 it).
+
+ps_atlas_3dnow: Using Atlas tuned to that Athlon 3dnow extensions.
+
+
+
+To see what ones to try, do:
+
+    cat /proc/cpuinfo
+
+and look at the "flags" field it kicks back. If it has sse, then try
+the ps_atlas_sse binary. If it says 3dnow then try that one. If it
+has both, try both. If neither, but is a Pent III, then try ps_atlas_PIII.
+Compare all of them to ps_vanilla.  Here's some timings from our
+500mhz Pent III (with sse).
+
+
+ps_vanilla: 40 seconds
+
+ps_atlas_PIII: 28.3 seconds
+
+ps_atlas_sse: 17.7 seconds
+
+
+On a 1.8ghz athlon with 3dnow and sse, we get:
+
+ps_vanilla: 13.8 seconds
+
+ps_atlas_PIII: 11.1 seconds
+
+ps_atlas_sse: 8.9 seconds
+
+ps_atlas_3dnow: 8.5 seconds
+
+ps_atlas_native: 9.2 seconds
+
+So on the Athlon we don't quite get the factor of 2 speedup that we see
+on the Pent III.
+

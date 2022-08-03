@@ -1,0 +1,35 @@
+How to install mikenet:
+
+First, untar the distribution.  You'll end up with a directory called
+Mikenet-{version}.  cd into that directory, and set your MIKENET_DIR
+environment variable to that location.
+
+For example, you'd do something like:
+
+   uncompress Mikenet-v2.7.tar
+   tar xvf Mikenet-v2.7.tar
+   setenv MIKENET_DIR ~/Mikenet-v2.7
+
+Put the setenv line at the bottom of your .cshrc file, if you use csh
+or tcsh.  It allows the Makefiles in the demos to find the
+libraries.
+
+cd to the src subdirectory.  There is a Makefile there with
+settings for various architectures.  See if your architecture is
+listed in the Makefile.  If in doubt, "ansi" should work if you
+have an ansi c compiler, or "gcc" if you have the gnu c compiler.
+
+Now do a "make clean", followed by "make <target>", where <target>
+is one of linux, gcc, cc, ansi, sparc, or hp.
+
+It should build the simulator library.  Doing "make install" will
+copy the simulator library over to the "lib" directory, and the header
+files over to the "include" directory.  The subdirectory of the
+"lib" dir will be whatever your ARCH environment variable is set to;
+typical settings are things like i586, sparc, and such.  On many
+systems, putting something like this in your .cshrc:
+
+   setenv ARCH `arch`
+
+will do the trick.  If you aren't on a heterogenous platform, then
+don't worry about it.

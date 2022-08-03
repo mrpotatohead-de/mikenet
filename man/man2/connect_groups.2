@@ -1,0 +1,13 @@
+.TH connect_groups 2 "" "" Mikenet
+.SH NAME
+connect_groups
+.SH SYNOPSIS
+
+#include <mikenet/simulator.h>
+
+function prototype in net.h
+
+Connections * connect_groups(Group *from,Group *to);
+
+.SH DEFINITION
+Instantiates a Connections object (see Connections(4)) connecting all units in group 'from' to group 'to'.

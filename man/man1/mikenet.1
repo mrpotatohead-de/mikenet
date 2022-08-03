@@ -1,0 +1,43 @@
+.TH MIKENET 1 "January 18, 1996" "\(co 1995 Michael Harm" "Mikenet" "Mikenet Users manual"
+.SH NAME
+mikenet \- Neural Network simulation library
+.SH DESCRIPTION
+Mikenet is a library and collection of header files used to create
+neural network simulations in the 'c' programming language.  Its
+strict ansi-c, and should as such be totally portable (?) to 
+any ansi-c aware platform.  It has been successfully compiled on
+Intel x86 hardware (under Linux, with gcc), Macintosh and Power Macintosh
+under Codewarrior, and UN*X machines from Sun, HP, 
+DEC, SGI, IBM (SP2), and Convex.
+.SH USAGE
+To use mikenet on a unix machine, you must have an environment variable
+MIKENET_DIR defined.  It must point to a mikenet source tree and version 
+number.  
+A typical mikenet installation consists of a directory 
+entitled "mikenet", with subdirectories corresponding to differing versions.
+Two symbolic links generally exist: one for 'default' which
+points to the default production version directory, and one for 'devel'
+which points to the directory undergoing development.
+Within each version subdirectory, there are directories for 'src', 'include', 
+'lib' and 'man', as well as a 'demos' subdirectory.  The MIKENET_DIR variable 
+should be set to one of the version directories.   
+.P
+Example:
+.P
+setenv MIKENET_DIR ~mharm/mikenet/default/
+.P
+This statement would go in the bottom of your .cshrc file if your shell
+is 'csh' or its ilk.
+.P
+.SH SEE ALSO
+load_examples(3)
+mikenet_stats(1)
+Group(4)
+Net(4)
+Example(4)
+Connections(4)
+connect_groups(2)
+create_example(2)
+copy_example(2)
+
+

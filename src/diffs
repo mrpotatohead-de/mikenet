@@ -1,0 +1,75 @@
+431a432,433
+> 	      vector_scalar(backdot,w,dedx,nfrom);
+> #ifdef FOO
+436a439
+> #endif
+452a456,457
+> 		  vector_scalar(gradient,outs,mysquig,nfrom);
+> #ifdef FOO
+456a462
+> #endif
+473a480,483
+> 
+> 		  vector_scalar(backdot,w,dedx,nfrom);
+> 		  vector_scalar(gradient,outs,mysquig,nfrom);
+> #ifdef FOO
+479a490
+> #endif
+489c500
+<   Real *w;
+---
+>   Real *w,x;
+497a509
+>   Error0("Calling OJA! Not really implemented...");
+509a522
+> 	  x=sigmoid_activation(c->contribution[i],c->to->temperature);
+511,512c524
+< 	    CLIP(sigmoid_activation(c->contribution[i],c->to->temperature),
+< 		 LOGISTIC_MIN,LOGISTIC_MAX);
+---
+> 	    CLIP(x,LOGISTIC_MIN,LOGISTIC_MAX);
+51a52,60
+> 
+> void vector_scalar(Real *out,Real *in,Real sc,int n)
+> {
+>   int i;
+>   for(i=0;i<n;i++)
+>     {
+>       out[i] += in[i] * sc;
+>     }
+> }
+72c72
+< Real CLIP(Real x,Real mn,Real mx)
+---
+> Real CLIP(Real val,Real mn,Real mx)
+74,76c74,78
+<   if (x > mx) return mx;
+<   else if (x < mn) return mn;
+<   else return x;
+---
+>   if (val < mn)
+>     return mn;
+>   else if (val > mx) 
+>     return mx;
+>   else return val;
+78a81
+> 
+359,361c362
+<   v = (double)temp * (double)x * -1.0;
+< 
+<   y=1.0/(1.0 + myexp(v));
+---
+>   v = (double)temp * (double)x;
+363c364,373
+<   return CLIP(y,LOGISTIC_MIN,LOGISTIC_MAX);
+---
+>   if (v > 15.0)
+>     return LOGISTIC_MAX;
+>   else if (v < -15.0)
+>     return LOGISTIC_MIN;
+>   else 
+>     {
+>       v *= -1.0;
+>       y=1.0/(1.0 + myexp(v));
+>       return CLIP(y,LOGISTIC_MIN,LOGISTIC_MAX);
+>     }

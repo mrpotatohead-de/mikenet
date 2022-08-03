@@ -1,0 +1,51 @@
+.TH Net 4 "" "" Mikenet
+.SH NAME
+Net
+.SH SYNOPSIS
+
+#include <mikenet/simulator.h>
+
+structure defined in net.h
+
+typedef struct
+{
+  FILE *debugFile;    /* internal use */
+  int numConnections; /* how many connection sets do we have */
+  Connections **connections;  /* array of connection sets */
+  int numGroups;     /* how many groups */
+  Group **groups;
+  int pid; /* process id */
+  int time;  /* how many ticks */
+  Real integrationConstant;
+} Net;
+
+
+.SH DEFINITION
+A network is a structure which holds a set of groups (see Group(4)) and connections (see Connection(4)).   Typically, you call one of the net training routines (like bptt_forward) with a net object and an ExampleSet object.
+.SS Members
+.P
+.C debugFile
+Used for internal debugging.  
+.P
+.C numConnections
+The number of connection sets in the network.
+.P
+.C connections
+An array of connection sets.  See Connections(4).
+.P
+.C numGroups
+The number of groups in the network
+.P
+.C groups
+An array of groups.  See Group(4).
+.P
+.C pid
+Process id (unix only).  See getpid().
+.P
+.C time
+Number of ticks the net runs for.
+.P
+.C integrationConstant
+Temporal resolution for continuous time nets.  Not used in bptt.
+.P
+

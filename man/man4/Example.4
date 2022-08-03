@@ -1,0 +1,53 @@
+.TH Example 4 "" "" Mikenet
+.SH NAME
+Example
+.SH SYNOPSIS
+
+#include <mikenet/simulator.h>
+
+structure defined in file example.h
+
+  typedef struct {
+   float prob;
+   char *name;
+   int index;
+   int time;
+   Real ***inputs;   /* indexed by group, time, unit */
+   Real ***targets;
+  } Example;
+
+.SH DEFINITION
+An example holds a single training example; a set of bindings over time and groups for clamped inputs and targets.
+
+The structure is memory efficient; if an example is declared in an example file with a range for ticks, such as 
+
+[0-5] 1 -1
+
+then only one array will be created for that group and those ticks, and the pointer to that array will be *shared* among those times.  This is important; if you algorithmically change one element for one tick in this condition, then *all* ticks get changed, because the memory is shared.  Furthermore, if an input is not specified for a given group, that whole pointer is null, and if one isn't specified for a given tick, that whole pointer is null.  
+
+To allow algorithmic manipulation of these structures, use copy_example(2) and create_example(2) which work with memory-fat structures; each cell in time and space is used.
+
+The value of -500 is used as a flag for 'don't care' or 'unspecified' clamps or targets.  If a value is less than -500, it is taken to be a don't care.
+.SS Members
+.P
+.C name
+The name of the example.  This is the contents of the 'tag' field.
+.P
+.C prob
+The probability of presentation for this example.
+.P
+.C index
+An internal index to identify the example.
+.P
+.C time
+The max number of ticks specified for this example.
+.P
+.C inputs
+A 3d array, indexed by group index, then time and then by unit number.  These are the activation clamps.
+.P
+.C targets
+Same as inputs, but specifies targets for training.
+
+.SH See Also
+create_example(2), copy_example(2), load_examples(3)
+

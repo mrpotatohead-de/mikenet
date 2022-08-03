@@ -1,0 +1,155 @@
+This is TeX, Version 3.14159 (C version 6.1) (format=latex 96.9.28)  2 MAR 1997 14:01
+**mikenet
+(mikenet.tex
+LaTeX2e <1996/06/01>
+Hyphenation patterns for english, german, loaded.
+(apa.cls
+Document Class: apa 1996/07/05 American Psychological Association format
+(/usr/local/teTeX/texmf/tex/latex/base/article.cls
+Document Class: article 1996/05/26 v1.3r Standard LaTeX document class
+(/usr/local/teTeX/texmf/tex/latex/base/size10.clo
+File: size10.clo 1996/05/26 v1.3r Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (twocolumn.sty)
+(/usr/local/teTeX/texmf/tex/latex/psnfss/times.sty
+Package: times 1995/08/16 5.2 Times PSNFSS2e package
+)
+(/usr/local/teTeX/texmf/tex/latex/psnfss/mathptm.sty
+Package: mathptm 1995/08/16{} Times + math package from fontinst
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ptmcm/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptmcm/m/n on input line 25.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ptmcm/m/it on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ptmcm/m/it on input line 26.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/pzccm/m/n on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/pzccm/m/n on input line 27.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 28.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 31.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 32.
+)
+\bibleftmargin=\skip43
+\b@level@one@skip=\skip44
+\e@level@one@skip=\skip45
+\b@level@two@skip=\skip46
+\e@level@two@skip=\skip47
+\b@level@three@skip=\skip48
+\e@level@three@skip=\skip49
+\b@level@four@skip=\skip50
+\e@level@four@skip=\skip51
+\b@level@five@skip=\skip52
+\e@level@five@skip=\skip53
+\c@APAenum=\count87
+\@text@par@indent=\skip54
+) (mikenet.sty)
+(mikenet.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 39.
+ (/usr/local/teTeX/texmf/tex/latex/psnfss/OT1ptm.fd
+File: OT1ptm.fd 1996/01/28 Fontinst v1.504 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 41
+.
+
+(/usr/local/teTeX/texmf/tex/latex/psnfss/OT1ptmcm.fd
+File: OT1ptmcm.fd 1995/12/21 Fontinst v1.500 font definitions for OT1/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 41
+.
+
+(/usr/local/teTeX/texmf/tex/latex/psnfss/OMLptmcm.fd
+File: OMLptmcm.fd 1995/12/21 Fontinst v1.500 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 41
+.
+
+(/usr/local/teTeX/texmf/tex/latex/psnfss/OMSpzccm.fd
+File: OMSpzccm.fd 1995/12/21 Fontinst v1.500 font definitions for OMS/pzccm.
+)
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 41
+.
+
+(/usr/local/teTeX/texmf/tex/latex/psnfss/OMXpsycm.fd
+File: OMXpsycm.fd 1995/12/21 Fontinst v1.500 font definitions for OMX/psycm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+
+
+LaTeX Warning: Citation `harm.seidenberg96' on page 1 undefined on input line 6
+8.
+
+[1
+
+
+
+] (mikenet.bbl) [2
+
+] (mikenet.aux) ) 
+Here is how much of TeX's memory you used:
+ 628 strings out of 10910
+ 6842 string characters out of 72285
+ 56652 words of memory out of 262141
+ 3515 multiletter control sequences out of 9500
+ 27567 words of font info for 67 fonts, out of 150000 for 255
+ 14 hyphenation exceptions out of 607
+ 32i,6n,24p,165b,313s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on mikenet.dvi (2 pages, 8944 bytes).

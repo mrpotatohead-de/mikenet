@@ -1,0 +1,4 @@
+condor.cnbc.cmu.edu 0 /eagle_2/home/mharm/projects/triangle/v56/batch.hear.mpi/train
+condor.cnbc.cmu.edu 1 /eagle_2/home/mharm/projects/triangle/v56/batch.hear.mpi/train
+kiwi02.cnbc.cmu.edu 1 /eagle_2/home/mharm/projects/triangle/v56/batch.hear.mpi/train
+kiwi01.cnbc.cmu.edu 1 /eagle_2/home/mharm/projects/triangle/v56/batch.hear.mpi/train

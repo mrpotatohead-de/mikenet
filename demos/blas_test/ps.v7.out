@@ -1,0 +1,470 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 66.67     72.14    72.14  5598520     0.01     0.01  dotscalar
+ 25.27     99.49    27.35  3493880     0.01     0.01  dotprod
+  3.79    103.59     4.10       20   205.00   205.00  bptt_apply_deltas
+  0.82    104.48     0.89     5320     0.17    13.73  crbp_backprop_error
+  0.60    105.13     0.65  1539600     0.00     0.00  crbp_ramp_dedx
+  0.53    105.70     0.57  1393200     0.00     0.00  sigmoid_activation
+  0.43    106.17     0.47  3600648     0.00     0.00  mikenet_random
+  0.42    106.62     0.45     5600     0.08     4.96  crbp_update_connections
+  0.41    107.06     0.44  1393200     0.00     0.00  ramp_input
+  0.19    107.27     0.21       77     2.73     2.73  make_real_array
+  0.15    107.43     0.16       20     8.00  1459.50  crbp_forward
+  0.13    107.57     0.14    19932     0.01     0.01  ex_read_sparse_exdata
+  0.08    107.66     0.09       14     6.43    11.88  connect_groups
+  0.06    107.73     0.07  3600648     0.00     0.00  gen_random_weight
+  0.06    107.79     0.06  1393200     0.00     0.00  bptt_unit_activation
+  0.06    107.85     0.06  1393200     0.00     0.00  clip_output
+  0.06    107.91     0.06       14     4.29    42.86  randomize_connections
+  0.05    107.96     0.05  1539600     0.00     0.00  sigmoid_derivative
+  0.05    108.01     0.05     2800     0.02     0.02  apply_example_clamps
+  0.04    108.05     0.04   760360     0.00     0.00  unit_ce_distance
+  0.04    108.09     0.04     2800     0.01     0.01  apply_example_targets
+  0.03    108.12     0.03  1472400     0.00     0.00  CLIP
+  0.02    108.14     0.02    19932     0.00     0.00  find_group_by_name
+  0.02    108.16     0.02       20     1.00  3691.50  crbp_compute_gradients
+  0.02    108.18     0.02        1    20.00   190.00  load_examples
+  0.01    108.19     0.01    79200     0.00     0.00  invert_activation
+  0.01    108.20     0.01    79200     0.00     0.00  sigmoid_inverse
+  0.01    108.21     0.01    19932     0.00     0.01  ex_read_spec
+  0.00    108.21     0.00    79200     0.00     0.00  bounded_clip_output
+  0.00    108.21     0.00    53255     0.00     0.00  mh_calloc
+  0.00    108.21     0.00    41000     0.00     0.00  get_value
+  0.00    108.21     0.00    26592     0.00     0.00  mh_malloc
+  0.00    108.21     0.00    19991     0.00     0.00  mh_realloc
+  0.00    108.21     0.00    19932     0.00     0.01  ex_read_exdata
+  0.00    108.21     0.00    19600     0.00     0.00  defaultGroupMethod
+  0.00    108.21     0.00    11200     0.00     0.00  defaultConnectionMethod
+  0.00    108.21     0.00    11200     0.00     0.00  is_group_in_net
+  0.00    108.21     0.00     6644     0.00     0.00  ex_read_tag
+  0.00    108.21     0.00     2800     0.00     0.00  default_ex_clamps_postmethod
+  0.00    108.21     0.00     2800     0.00     0.00  default_ex_clamps_premethod
+  0.00    108.21     0.00     2800     0.00     0.00  default_ex_targets_postmethod
+  0.00    108.21     0.00     2800     0.00     0.00  default_ex_targets_premethod
+  0.00    108.21     0.00     1600     0.00     0.00  defaultNetMethod
+  0.00    108.21     0.00       36     0.00     0.00  bind_connection_to_net
+  0.00    108.21     0.00       20     0.00     0.00  compute_sem_error
+  0.00    108.21     0.00       20     0.00   205.00  crbp_apply_deltas
+  0.00    108.21     0.00       19     0.00     0.00  bind_group_to_net
+  0.00    108.21     0.00       14     0.00     0.00  make_array
+  0.00    108.21     0.00        7     0.00    19.09  init_group
+  0.00    108.21     0.00        3     0.00     0.00  create_net
+  0.00    108.21     0.00        3     0.00     0.00  init_net
+  0.00    108.21     0.00        1     0.00     0.00  announce_version
+  0.00    108.21     0.00        1     0.00   900.00  build_hearing_model
+  0.00    108.21     0.00        1     0.00    19.09  init_bias
+  0.00    108.21     0.00        1     0.00     0.00  mikenet_open_for_reading
+  0.00    108.21     0.00        1     0.00     0.00  mikenet_set_seed
+  0.00    108.21     0.00        1     0.00     0.00  precompute_topology
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.01% of 108.21 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00  108.21                 main [1]
+                0.02   73.81      20/20          crbp_compute_gradients [2]
+                0.16   29.03      20/20          crbp_forward [5]
+                0.00    4.10      20/20          crbp_apply_deltas [9]
+                0.00    0.90       1/1           build_hearing_model [11]
+                0.02    0.17       1/1           load_examples [19]
+                0.00    0.00      20/20          compute_sem_error [50]
+                0.00    0.00       1/1           announce_version [55]
+                0.00    0.00       1/1           mikenet_set_seed [57]
+                0.00    0.00       1/1           precompute_topology [58]
+-----------------------------------------------
+                0.02   73.81      20/20          main [1]
+[2]     68.2    0.02   73.81      20         crbp_compute_gradients [2]
+                0.89   72.14    5320/5320        crbp_backprop_error [3]
+                0.65    0.09 1539600/1539600     crbp_ramp_dedx [12]
+                0.04    0.00    2800/2800        apply_example_targets [29]
+                0.00    0.00   11200/19600       defaultGroupMethod [40]
+                0.00    0.00     800/1600        defaultNetMethod [48]
+-----------------------------------------------
+                0.89   72.14    5320/5320        crbp_compute_gradients [2]
+[3]     67.5    0.89   72.14    5320         crbp_backprop_error [3]
+               72.14    0.00 5598520/5598520     dotscalar [4]
+-----------------------------------------------
+               72.14    0.00 5598520/5598520     crbp_backprop_error [3]
+[4]     66.7   72.14    0.00 5598520         dotscalar [4]
+-----------------------------------------------
+                0.16   29.03      20/20          main [1]
+[5]     27.0    0.16   29.03      20         crbp_forward [5]
+                0.45   27.35    5600/5600        crbp_update_connections [6]
+                0.44    0.72 1393200/1393200     ramp_input [10]
+                0.05    0.00    2800/2800        apply_example_clamps [27]
+                0.01    0.01   79200/79200       invert_activation [31]
+                0.00    0.00   79200/79200       bounded_clip_output [35]
+                0.00    0.00   11200/11200       is_group_in_net [42]
+                0.00    0.00   11200/11200       defaultConnectionMethod [41]
+                0.00    0.00    8400/19600       defaultGroupMethod [40]
+                0.00    0.00     800/1600        defaultNetMethod [48]
+-----------------------------------------------
+                0.45   27.35    5600/5600        crbp_forward [5]
+[6]     25.7    0.45   27.35    5600         crbp_update_connections [6]
+               27.35    0.00 3493880/3493880     dotprod [7]
+-----------------------------------------------
+               27.35    0.00 3493880/3493880     crbp_update_connections [6]
+[7]     25.3   27.35    0.00 3493880         dotprod [7]
+-----------------------------------------------
+                4.10    0.00      20/20          crbp_apply_deltas [9]
+[8]      3.8    4.10    0.00      20         bptt_apply_deltas [8]
+-----------------------------------------------
+                0.00    4.10      20/20          main [1]
+[9]      3.8    0.00    4.10      20         crbp_apply_deltas [9]
+                4.10    0.00      20/20          bptt_apply_deltas [8]
+-----------------------------------------------
+                0.44    0.72 1393200/1393200     crbp_forward [5]
+[10]     1.1    0.44    0.72 1393200         ramp_input [10]
+                0.06    0.60 1393200/1393200     bptt_unit_activation [13]
+                0.06    0.00 1393200/1393200     clip_output [25]
+-----------------------------------------------
+                0.00    0.90       1/1           main [1]
+[11]     0.8    0.00    0.90       1         build_hearing_model [11]
+                0.06    0.54      14/14          randomize_connections [14]
+                0.09    0.08      14/14          connect_groups [21]
+                0.00    0.11       6/7           init_group [24]
+                0.00    0.02       1/1           init_bias [33]
+                0.00    0.00      36/36          bind_connection_to_net [49]
+                0.00    0.00      19/19          bind_group_to_net [51]
+                0.00    0.00       3/3           create_net [53]
+-----------------------------------------------
+                0.65    0.09 1539600/1539600     crbp_compute_gradients [2]
+[12]     0.7    0.65    0.09 1539600         crbp_ramp_dedx [12]
+                0.05    0.00 1539600/1539600     sigmoid_derivative [26]
+                0.04    0.00  760360/760360      unit_ce_distance [28]
+-----------------------------------------------
+                0.06    0.60 1393200/1393200     ramp_input [10]
+[13]     0.6    0.06    0.60 1393200         bptt_unit_activation [13]
+                0.57    0.00 1393200/1393200     sigmoid_activation [15]
+                0.03    0.00 1393200/1472400     CLIP [30]
+-----------------------------------------------
+                0.06    0.54      14/14          build_hearing_model [11]
+[14]     0.6    0.06    0.54      14         randomize_connections [14]
+                0.07    0.47 3600648/3600648     gen_random_weight [16]
+-----------------------------------------------
+                0.57    0.00 1393200/1393200     bptt_unit_activation [13]
+[15]     0.5    0.57    0.00 1393200         sigmoid_activation [15]
+-----------------------------------------------
+                0.07    0.47 3600648/3600648     randomize_connections [14]
+[16]     0.5    0.07    0.47 3600648         gen_random_weight [16]
+                0.47    0.00 3600648/3600648     mikenet_random [17]
+-----------------------------------------------
+                0.47    0.00 3600648/3600648     gen_random_weight [16]
+[17]     0.4    0.47    0.00 3600648         mikenet_random [17]
+-----------------------------------------------
+                0.08    0.00      28/77          connect_groups [21]
+                0.13    0.00      49/77          init_group [24]
+[18]     0.2    0.21    0.00      77         make_real_array [18]
+-----------------------------------------------
+                0.02    0.17       1/1           main [1]
+[19]     0.2    0.02    0.17       1         load_examples [19]
+                0.01    0.16   19932/19932       ex_read_spec [20]
+                0.00    0.00   13290/53255       mh_calloc [36]
+                0.00    0.00    6644/6644        ex_read_tag [43]
+                0.00    0.00       4/19991       mh_realloc [39]
+                0.00    0.00       2/26592       mh_malloc [38]
+                0.00    0.00       1/1           mikenet_open_for_reading [56]
+-----------------------------------------------
+                0.01    0.16   19932/19932       load_examples [19]
+[20]     0.2    0.01    0.16   19932         ex_read_spec [20]
+                0.00    0.14   19932/19932       ex_read_exdata [22]
+                0.02    0.00   19932/19932       find_group_by_name [32]
+                0.00    0.00   19932/26592       mh_malloc [38]
+                0.00    0.00   19932/53255       mh_calloc [36]
+-----------------------------------------------
+                0.09    0.08      14/14          build_hearing_model [11]
+[21]     0.2    0.09    0.08      14         connect_groups [21]
+                0.08    0.00      28/77          make_real_array [18]
+                0.00    0.00      42/53255       mh_calloc [36]
+                0.00    0.00      14/14          make_array [52]
+-----------------------------------------------
+                0.00    0.14   19932/19932       ex_read_spec [20]
+[22]     0.1    0.00    0.14   19932         ex_read_exdata [22]
+                0.14    0.00   19932/19932       ex_read_sparse_exdata [23]
+-----------------------------------------------
+                0.14    0.00   19932/19932       ex_read_exdata [22]
+[23]     0.1    0.14    0.00   19932         ex_read_sparse_exdata [23]
+                0.00    0.00   19932/53255       mh_calloc [36]
+                0.00    0.00   19932/19991       mh_realloc [39]
+-----------------------------------------------
+                0.00    0.02       1/7           init_bias [33]
+                0.00    0.11       6/7           build_hearing_model [11]
+[24]     0.1    0.00    0.13       7         init_group [24]
+                0.13    0.00      49/77          make_real_array [18]
+                0.00    0.00      56/53255       mh_calloc [36]
+                0.00    0.00       8/26592       mh_malloc [38]
+                0.00    0.00       6/19991       mh_realloc [39]
+-----------------------------------------------
+                0.06    0.00 1393200/1393200     ramp_input [10]
+[25]     0.1    0.06    0.00 1393200         clip_output [25]
+-----------------------------------------------
+                0.05    0.00 1539600/1539600     crbp_ramp_dedx [12]
+[26]     0.0    0.05    0.00 1539600         sigmoid_derivative [26]
+-----------------------------------------------
+                0.05    0.00    2800/2800        crbp_forward [5]
+[27]     0.0    0.05    0.00    2800         apply_example_clamps [27]
+                0.00    0.00    2800/2800        default_ex_clamps_premethod [45]
+                0.00    0.00    2800/2800        default_ex_clamps_postmethod [44]
+-----------------------------------------------
+                0.04    0.00  760360/760360      crbp_ramp_dedx [12]
+[28]     0.0    0.04    0.00  760360         unit_ce_distance [28]
+-----------------------------------------------
+                0.04    0.00    2800/2800        crbp_compute_gradients [2]
+[29]     0.0    0.04    0.00    2800         apply_example_targets [29]
+                0.00    0.00    2800/2800        default_ex_targets_premethod [47]
+                0.00    0.00    2800/2800        default_ex_targets_postmethod [46]
+-----------------------------------------------
+                0.00    0.00   79200/1472400     bounded_clip_output [35]
+                0.03    0.00 1393200/1472400     bptt_unit_activation [13]
+[30]     0.0    0.03    0.00 1472400         CLIP [30]
+-----------------------------------------------
+                0.01    0.01   79200/79200       crbp_forward [5]
+[31]     0.0    0.01    0.01   79200         invert_activation [31]
+                0.01    0.00   79200/79200       sigmoid_inverse [34]
+-----------------------------------------------
+                0.02    0.00   19932/19932       ex_read_spec [20]
+[32]     0.0    0.02    0.00   19932         find_group_by_name [32]
+-----------------------------------------------
+                0.00    0.02       1/1           build_hearing_model [11]
+[33]     0.0    0.00    0.02       1         init_bias [33]
+                0.00    0.02       1/7           init_group [24]
+-----------------------------------------------
+                0.01    0.00   79200/79200       invert_activation [31]
+[34]     0.0    0.01    0.00   79200         sigmoid_inverse [34]
+-----------------------------------------------
+                0.00    0.00   79200/79200       crbp_forward [5]
+[35]     0.0    0.00    0.00   79200         bounded_clip_output [35]
+                0.00    0.00   79200/1472400     CLIP [30]
+-----------------------------------------------
+                0.00    0.00       3/53255       create_net [53]
+                0.00    0.00      42/53255       connect_groups [21]
+                0.00    0.00      56/53255       init_group [24]
+                0.00    0.00   13290/53255       load_examples [19]
+                0.00    0.00   19932/53255       ex_read_sparse_exdata [23]
+                0.00    0.00   19932/53255       ex_read_spec [20]
+[36]     0.0    0.00    0.00   53255         mh_calloc [36]
+-----------------------------------------------
+                0.00    0.00   41000/41000       compute_sem_error [50]
+[37]     0.0    0.00    0.00   41000         get_value [37]
+-----------------------------------------------
+                0.00    0.00       2/26592       load_examples [19]
+                0.00    0.00       3/26592       bind_connection_to_net [49]
+                0.00    0.00       3/26592       bind_group_to_net [51]
+                0.00    0.00       8/26592       init_group [24]
+                0.00    0.00    6644/26592       ex_read_tag [43]
+                0.00    0.00   19932/26592       ex_read_spec [20]
+[38]     0.0    0.00    0.00   26592         mh_malloc [38]
+-----------------------------------------------
+                0.00    0.00       4/19991       load_examples [19]
+                0.00    0.00       6/19991       init_group [24]
+                0.00    0.00      16/19991       bind_group_to_net [51]
+                0.00    0.00      33/19991       bind_connection_to_net [49]
+                0.00    0.00   19932/19991       ex_read_sparse_exdata [23]
+[39]     0.0    0.00    0.00   19991         mh_realloc [39]
+-----------------------------------------------
+                0.00    0.00    8400/19600       crbp_forward [5]
+                0.00    0.00   11200/19600       crbp_compute_gradients [2]
+[40]     0.0    0.00    0.00   19600         defaultGroupMethod [40]
+-----------------------------------------------
+                0.00    0.00   11200/11200       crbp_forward [5]
+[41]     0.0    0.00    0.00   11200         defaultConnectionMethod [41]
+-----------------------------------------------
+                0.00    0.00   11200/11200       crbp_forward [5]
+[42]     0.0    0.00    0.00   11200         is_group_in_net [42]
+-----------------------------------------------
+                0.00    0.00    6644/6644        load_examples [19]
+[43]     0.0    0.00    0.00    6644         ex_read_tag [43]
+                0.00    0.00    6644/26592       mh_malloc [38]
+-----------------------------------------------
+                0.00    0.00    2800/2800        apply_example_clamps [27]
+[44]     0.0    0.00    0.00    2800         default_ex_clamps_postmethod [44]
+-----------------------------------------------
+                0.00    0.00    2800/2800        apply_example_clamps [27]
+[45]     0.0    0.00    0.00    2800         default_ex_clamps_premethod [45]
+-----------------------------------------------
+                0.00    0.00    2800/2800        apply_example_targets [29]
+[46]     0.0    0.00    0.00    2800         default_ex_targets_postmethod [46]
+-----------------------------------------------
+                0.00    0.00    2800/2800        apply_example_targets [29]
+[47]     0.0    0.00    0.00    2800         default_ex_targets_premethod [47]
+-----------------------------------------------
+                0.00    0.00     800/1600        crbp_forward [5]
+                0.00    0.00     800/1600        crbp_compute_gradients [2]
+[48]     0.0    0.00    0.00    1600         defaultNetMethod [48]
+-----------------------------------------------
+                0.00    0.00      36/36          build_hearing_model [11]
+[49]     0.0    0.00    0.00      36         bind_connection_to_net [49]
+                0.00    0.00      33/19991       mh_realloc [39]
+                0.00    0.00       3/26592       mh_malloc [38]
+-----------------------------------------------
+                0.00    0.00      20/20          main [1]
+[50]     0.0    0.00    0.00      20         compute_sem_error [50]
+                0.00    0.00   41000/41000       get_value [37]
+-----------------------------------------------
+                0.00    0.00      19/19          build_hearing_model [11]
+[51]     0.0    0.00    0.00      19         bind_group_to_net [51]
+                0.00    0.00      16/19991       mh_realloc [39]
+                0.00    0.00       3/26592       mh_malloc [38]
+-----------------------------------------------
+                0.00    0.00      14/14          connect_groups [21]
+[52]     0.0    0.00    0.00      14         make_array [52]
+-----------------------------------------------
+                0.00    0.00       3/3           build_hearing_model [11]
+[53]     0.0    0.00    0.00       3         create_net [53]
+                0.00    0.00       3/53255       mh_calloc [36]
+                0.00    0.00       3/3           init_net [54]
+-----------------------------------------------
+                0.00    0.00       3/3           create_net [53]
+[54]     0.0    0.00    0.00       3         init_net [54]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[55]     0.0    0.00    0.00       1         announce_version [55]
+-----------------------------------------------
+                0.00    0.00       1/1           load_examples [19]
+[56]     0.0    0.00    0.00       1         mikenet_open_for_reading [56]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[57]     0.0    0.00    0.00       1         mikenet_set_seed [57]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[58]     0.0    0.00    0.00       1         precompute_topology [58]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [30] CLIP                   [53] create_net             [54] init_net
+  [55] announce_version       [41] defaultConnectionMethod [31] invert_activation
+  [27] apply_example_clamps   [40] defaultGroupMethod     [42] is_group_in_net
+  [29] apply_example_targets  [48] defaultNetMethod       [19] load_examples
+  [49] bind_connection_to_net [44] default_ex_clamps_postmethod [52] make_array
+  [51] bind_group_to_net      [45] default_ex_clamps_premethod [18] make_real_array
+  [35] bounded_clip_output    [46] default_ex_targets_postmethod [36] mh_calloc
+   [8] bptt_apply_deltas      [47] default_ex_targets_premethod [38] mh_malloc
+  [13] bptt_unit_activation    [7] dotprod                [39] mh_realloc
+  [11] build_hearing_model     [4] dotscalar              [56] mikenet_open_for_reading
+  [25] clip_output            [22] ex_read_exdata         [17] mikenet_random
+  [50] compute_sem_error      [23] ex_read_sparse_exdata  [57] mikenet_set_seed
+  [21] connect_groups         [20] ex_read_spec           [58] precompute_topology
+   [9] crbp_apply_deltas      [43] ex_read_tag            [10] ramp_input
+   [3] crbp_backprop_error    [32] find_group_by_name     [14] randomize_connections
+   [2] crbp_compute_gradients [16] gen_random_weight      [15] sigmoid_activation
+   [5] crbp_forward           [37] get_value              [26] sigmoid_derivative
+  [12] crbp_ramp_dedx         [33] init_bias              [34] sigmoid_inverse
+   [6] crbp_update_connections [24] init_group            [28] unit_ce_distance
