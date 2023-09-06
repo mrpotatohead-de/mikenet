@@ -56,7 +56,7 @@ $(LIB_OPENMP): $(OBJS)
 	@mkdir -p $(@D)
 	$(AR) rcs $@ $^
 
-lib_blis: CPPFLAGS += -fopenmp -DUSE_AMDBLIS -I/home/chingenkuo/ce_ws/blis/include/zen2
+lib_blis: CPPFLAGS += -fopenmp -DUSE_AMDBLIS -I/home/nm6114083/my_ws/blis/include/zen3
 lib_blis: $(LIB_BLIS)	## build Mikenet as static library with AMD BLIS
 	-@$(RM) -r $(OBJS)
 
